@@ -6,7 +6,7 @@ function getFile(filename: string)
     return game:HttpGet(url..filename)
 end
 
-function isSupported()
+function main:isSupported()
     local unsupported = (writefile == nil or isfile == nil)
     local method = (getsynasset or getcustomasset)
     if unsupported then
@@ -18,11 +18,11 @@ end
 
 function main:download(file: string, to:string)
     to = to or ""
-    if isSupported() == false then
-        return
+    if main:isSupported() == false then
+        return false
     end
 
-    local wrf, isf, getasset = isSupported()
+    local wrf, isf, getasset = main:isSupported()
     local fileToDownloadTo = to..file
 
     if isf(fileToDownloadTo) then
