@@ -11,13 +11,7 @@ function makeNotification(text:string)
 
 	AzariNotification.Name = "AzariNotification"
 	local hui = get_hidden_gui or gethui or game:GetService("CoreGui")
-
-    if syn then
-        syn.protect_gui(AzariNotification)
-        hui.Parent = game:GetService("CoreGui")
-    else
-        AzariNotification.Parent = hui
-    end
+    AzariNotification.Parent = hui
 	AzariNotification.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	Notif.Name = "Notif"
