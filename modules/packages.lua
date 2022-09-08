@@ -15,5 +15,5 @@ local function getURL(url: string)
 end
 
 return function(package: string)
-    return getURL("https://raw.githubusercontent.com/10GoodBlox/Script-CDN/main/modules/"..package..".lua")
+    return loadstring(getURL("https://raw.githubusercontent.com/10GoodBlox/Script-CDN/main/modules/"..package..".lua"))
 end
